@@ -14,7 +14,7 @@ void main()
 	cin>> N;
 	for (i=1;i<=N;i++)
 	{
-		cout<< "ingrese el salario bruto del trabajador";
+		cout<< "ingrese el salario bruto del trabajador: ";
 		cin>> SB;
 		if (SB>=7000)
 			SN=SB-(IVA+AFP)*SB;
