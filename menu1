@@ -1,0 +1,78 @@
+// menu
+//autor: NathaliaHoyosRivarola
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "stdlib.h"
+#define IVA 0.13
+#define AFP 0.1271
+using namespace std;
+void main()
+{
+   float NP,NPP,EP1,EP2,EP,EFP,EF,NF,PROMEDIO,SN,SB;
+   int opcion,N,i;  
+   do {
+     cout << endl;
+     cout << "1.- NOTA FINAL" << endl;
+     cout << "2.- salario neto trabajadores UPSA" << endl;
+	 cout << "0.- Salir" << endl;
+     cout << "Elige una opción: " ;
+     cin >> opcion;
+     switch (opcion) {
+	    case 1: 
+			{
+			cout<<"Introduzca el numero de estudiantes"<<endl;
+			cin>>N;
+			for(i=1; i<=N; i++)
+			{
+			cout<< "ingrese la nota del examen practico: ";
+			cin>> NPP;
+			NP=NPP*0.20;
+			cout<<endl;
+			cout<< "ingrese la nota del primer examen parcial: ";
+			cin>> EP1;
+			cout<<endl;
+			cout<< "ingrese la nota del segundo examen parcial: ";
+			cin>> EP2;
+			EP=(EP1+EP2)*0.40;
+			cout<<"ingrese el numero de faltas:"<<endl;
+			cin>> NF;
+			cout<< "ingrese la nota del examen final: ";
+			cin>> EFP;
+			if (NF>=0.20*48)
+				EF=0;
+			else 
+				EF=EFP*0.4;
+			NF=NP+EP+EF;
+			if (NF>=51)
+				cout<< "el estudiante esta aprobado "<<endl;
+			else 
+			  cout<< "el estudiante esta reprobado"<<endl;
+
+			cout<<"la nota final es: "<<NF<<endl;
+
+			} break;
+				}
+	    case 2: 
+			{
+				cout<< "ingrese el numero de empleados: ";
+	            cin>> N;
+	         for (i=1;i<=N;i++)
+	         {
+		      cout<< "ingrese el salario bruto del trabajador: ";
+		      cin>> SB;
+		      if (SB>=7000)
+			   SN=SB-(IVA+AFP)*SB;
+		      else 
+			   SN=SB*(1-AFP);
+		      cout<< "el salario neto es:"<<SN<<endl;
+	         }
+			break;
+			}
+		case 0: cout << "Salir";break;
+	    default: cout << "Opcion invalida" << endl;
+	 }
+	 } while (opcion != 0);
+     getch();
+	  system("cls");
+}
