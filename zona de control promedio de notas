@@ -1,0 +1,39 @@
+//auto: nathalia hoyos rivarola
+//registro: 2015110950
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "stdlib.h"
+using namespace std;
+void main()
+{
+	int a,s,i;
+	float np, p1, p2, p3, ef, nf;
+	cout<< "escribir el numero de registro del estudiante: ";
+	cin>>a;
+	s=0;
+	i=1;
+	while (a!=-999)
+	{
+		cout<< "escribir la nota practica del estudiante: ";
+		cin>>np;
+		cout<< "escribir la nota del pracial 1 del estudiante: ";
+		cin>>p1;
+		cout<< "escribir la nota del parcial 2 del estudiante: ";
+		cin>>p2;
+		cout<< "escribir la nota del parcial 3 del estudiante: ";
+		cin>>p3;
+		cout<< "escribir la nota del examen final del estudiante: ";
+		cin>>ef;
+		nf=(np*0.2)+((p1+p2+p3)/3)*0.4+ef*0.4;
+		s=s+nf;
+		system("cls");
+		cout<< "ingrese el numero de registro del estudiante: ";
+		cin>>a;
+		i++;
+		
+	}
+	cout<< "el promedio de las notas de todos los estudiantes es: "<<s/(i-1);
+	getch();
+}
