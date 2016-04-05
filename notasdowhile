@@ -1,0 +1,36 @@
+// promedionotas.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "stdlib.h"
+using namespace std;
+void main()
+{
+	int i;
+	float np,s , p1, p2, p3,ef,nf;
+	char m; // permite ingresar letras
+	s=0;
+	i=1;
+	do
+	{
+		cout<<"ingrese la nota practica del estudiante: ";
+		cin>>np;
+		cout<< "ingrese la nota del primer parcial del estudiante: ";
+		cin>> p1;
+		cout<< "ingrese la nota del segundo parcial del estudiante: ";
+		cin>> p2;
+		cout<< "ingrese la nota del tercer parcial del estudiante: ";
+		cin>> p3;
+		cout<< "ingrese la nota del examen final del estudiante: ";
+		cin>> ef;
+		nf= np*0.2+((p1+p2+p3)/3)*0.4+ef*0.4;
+		s=s+nf;
+		cout<< "desea continuar";
+		cin>>m;
+		i++;
+	} while (m!='N');
+	cout<<"el promedio es: "<<s/(i-1)<<endl;
+	getch();
+}
