@@ -1,0 +1,28 @@
+// factorialyvalidacionwhile.cpp : main project file.
+//autor: Nathalia Hoyos Rivarola
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+using namespace std;
+void main()
+{ 
+	int factorial, i, n;
+	factorial=1;
+	i=1;
+	//factorial es un acumulador del producto
+	//i es un contador
+	//n es el numero al que necesito calcular el factorial
+	//validar la entrada
+	do{
+		cout<< "ingrese el valor de n:";
+		cin>>n;
+	} while(n<0);//la condicion debe contemplar los valores incorrectos
+	//negar la condicion correcta
+	while(i<=n)
+	{
+		factorial=factorial*i;//acumulador del producto
+		i++;
+	}
+	cout<< "el factorial de"<<n<<"es"<<factorial;
+	getch();
+}
