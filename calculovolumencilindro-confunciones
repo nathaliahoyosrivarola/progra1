@@ -1,0 +1,25 @@
+// calcular cilindro.cpp : Defines the entry point for the console application.
+//
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+using namespace std;
+float vol_cilindro(float r, float a);//prototipo de la funcion
+
+int main()
+{
+    float radio, altura, volumen;	
+    cout <<"Ingrese el radio:" ; 
+	cin >>radio;	
+    cout <<"Ingrese la altura:"; 
+	cin >> altura;	
+    volumen= vol_cilindro(radio,altura);//llamada de la funcion
+    cout <<"El volumen es:" <<volumen;    
+    return 0; 
+	getch();
+ }
+//declaracion o definicion de la funcion
+float vol_cilindro (float r, float a)
+ { float v= 3.141516*r*r*a ;	
+    return v;   
+}
