@@ -1,0 +1,34 @@
+// factorial.cpp : Defines the entry point for the console application.
+//
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "stdlib.h"
+using namespace std;
+int factorial(int x);//prototipo de la funcion
+
+void main()
+{
+    int n,resultado;
+	do
+	{
+		cout<<"introduzca el valor del cual desea calcular su factorial: ";
+		cin>>n;
+	}while(n<=0);
+	resultado=factorial(n);
+	cout<<"el factorial es: "<<resultado;
+
+    system("pause"); 
+	getch();
+	
+ }
+//declaracion o definicion de la funcion
+int factorial (int x)
+ { 
+	 float fact=1;
+	 for(int i=1;i<=x;i++)
+	 
+	 fact=fact*i;
+    return fact; 
+	
+}
