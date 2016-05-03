@@ -1,0 +1,36 @@
+// calculodeltotalganado.cpp : Defines the entry point for the console application.
+//
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "stdlib.h"
+using namespace std;
+float total(float num, float costo);//prototipo de la funcion
+
+int main()
+{
+    float horastrabajadas, costohora, totalganado;
+	do
+	{
+    cout <<"Ingrese las horas trabajadas:" ; 
+	cin >>horastrabajadas;
+	}while(horastrabajadas<=0);
+	do
+	{
+    cout <<"Ingrese el costo por hora:"; 
+	cin >> costohora;
+	}while(costohora<=0);
+   totalganado= total(horastrabajadas,costohora);//llamada de la funcion
+    cout <<"El total ganado es:" <<totalganado;    
+    system("pause");
+	return 0; 
+	getch();
+	
+ }
+//declaracion o definicion de la funcion
+float total (float num, float costo)
+ { 
+	 float m ;
+	 m=num*costo;
+    return m;   
+}
