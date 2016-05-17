@@ -1,0 +1,73 @@
+// promedioconvectores.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define MAX 100
+using namespace std;
+void cargar(double a[], int tam);
+void mostrar(double a[], int tam);
+double promedio (double a[], int tam);
+void Burbuja(double a[],int tam);
+int BusquedaLineal(double a[],int b,int tam);
+void main()
+{
+	int n,pos;
+	double notas[MAX],prom,k;
+	do{
+		cout<<"ingrese el numero de elementos: ";
+		cin>>n;
+	}while((n<=0)||(n>100));
+	cargar(notas,n);
+	//busqueda de un elemento en el vector
+	cout<<"ingrese el elemento a buscar: ";
+	cin>>k;
+	pos=BusquedaLineal(notas,k,n);
+	if (pos==-1)
+		cout<<"no se encuentra el dato";
+	else
+		cout<<"el elemento esta en la posicion"<<pos<<endl;
+	Burbuja (notas,n);
+	mostrar (notas,n);
+	prom=promedio(notas,n);
+	cout<<"el promedio es: "<<prom;
+	getch();
+}
+double promedio (double a[], int tam)
+{
+	double suma=0;
+	for(int i=0;i<tam;i++)
+		suma=suma+a[i];
+	return suma/tam;
+}
+void cargar(double a[], int tam)
+{
+	for(int i=0;i<tam;i++)
+	{
+		cout<<"V["<<i<<"]=";
+		cin>>a[i];
+	}
+}
+void mostrar (double a[],int tam)
+{
+	for(int i=0;i<tam;i++)
+		cout<<"V["<<i<<"]="<<a[i]<<endl;
+}
+
+void Burbuja(double a[],int tam)
+{
+ for(int i = 0; i< tam - 1 ; i++)
+   for(int j = i+1; j< tam;j++)
+     if(a[i]>a[j]){
+       int temp = a[i];
+       a[i]=a[j];
+       a[j]=temp;
+    }
+}
+int BusquedaLineal(double a[],int b,int tam){
+  for(int i = 0; i< tam; i++)
+    if(a[i]==b)
+       return i;
+  return -1;
+}
