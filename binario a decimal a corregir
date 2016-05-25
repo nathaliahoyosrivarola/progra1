@@ -1,0 +1,35 @@
+// J.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+using namespace std;
+void conversion(int a, int &n);
+void main()
+{
+	int n,num;
+	cout<<"introduzca el numero en binario: ";
+	cin>>n;
+	conversion(n,num);
+	cout<<"el numero en decimal es: "<<num;
+	getch();
+}
+void conversion(int a, int &n)
+{
+	int contador=0;
+	int num=a;
+	int bin=0;
+	while(num!=0)
+	{
+		num=num/10;
+		contador++;
+	}
+	for(int i=0;i<=contador; i++)
+	{
+		int b=a%10;
+		n= n + b*powl(2,i);
+		a=a/10;
+	}
+}
