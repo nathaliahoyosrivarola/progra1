@@ -1,0 +1,47 @@
+#include "stdafx.h"
+#include <iostream>
+#include <iomanip>
+#define MAX 100
+using namespace std;
+
+void unir(int A[], int m, int B[], int n, int C[]) {
+	int i = 0, j = 0, k = 0;
+
+	while (i < m && j < n) {
+		if (A[i] < B[j]) {
+			C[k++] = A[i];
+			i++;
+		} else {
+			C[k++] = B[j];
+			j++;
+		}
+	}
+
+	while (i < m) {
+		C[k++] = A[i];
+		i++;
+	}
+
+	while (j < n) {
+		C[k++] = B[j];
+		j++;
+	}
+}
+
+void main()
+{
+	int vec1[MAX] = {1, 5, 15, 28, 30};
+	int m = 5;
+
+	int vec2[MAX] = {7, 8, 20, 21};
+	int n = 4;
+
+	int vec3[MAX];
+
+	unir(vec1, m, vec2, n, vec3);
+
+	for (int i = 0; i < m + n; i++) {
+		cout << vec3[i] << " ";
+	}
+	cout << '\n';
+}
